@@ -1253,25 +1253,11 @@ KfErkDaWMFZZeuqDmXKJEGHyToPUhPphfVhgUZgbIuRAtWnroImpJKqqmEZqeNQCKzhjIkKQHURWLXFw
 PBuijeoTSpsVLaOGuLVjMZXkBvVXwUuHfBihziiavGSYofPNeKsTXruMUumRRPQJzvSzJkKbtSipiqBd
 """
 
-upperNum = 0
-nearTrue = False
+for c in range(0, len(awfulString)):
+    if awfulString[c].islower() and awfulString[c+1].isupper() and awfulString[c+2].isupper():
+        if awfulString[c+3].isupper() and awfulString[c+4].islower() and awfulString[c+5].isupper():
+            if awfulString[c+6].isupper() and awfulString[c+7].isupper() and awfulString[c+8].islower():
+                for x in range(1, 8):
+                    print("x = "+str(x)+" "+awfulString[c+x])
+                print("-------------------------------------")
 
-currentString = ''
-
-for c in awfulString:
-    if c.isupper:
-        upperNum += 1
-        currentString += c
-
-    if c.islower and upperNum == 3:
-        nearTrue = True
-        upperNum = 0
-        currentString += c
-
-    if c.islower and upperNum != 3:
-        upperNum = 0
-        currentString = ''
-
-    if c.islower and upperNum == 3 and nearTrue == True:
-        print(currentString)
-        break
